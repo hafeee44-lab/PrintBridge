@@ -1,0 +1,7 @@
+# Local downloaded/runtime files
+SumatraPDF*.exe
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
