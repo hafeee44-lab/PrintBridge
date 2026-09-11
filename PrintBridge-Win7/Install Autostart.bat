@@ -52,16 +52,26 @@ echo   Starting it now...
 schtasks /Run /TN "Print Bridge" >nul 2>&1
 timeout /t 4 >nul
 
-rem --- tell the user where it is (ipconfig: no Get-NetIPAddress here) ---
+rem --- tell the user where it is --------------------------------------
+rem  Ask the bridge itself, so this shows the same address it advertises.
 set "IP="
-for /f "tokens=2 delims=:" %%I in ('ipconfig ^| findstr /i /c:"IPv4"') do (
-  if not defined IP set "IP=%%I"
-)
+for /f "usebackq delims=" %%I in (`"!PYW:pythonw.exe=python.exe!" -c "from printbridge.discovery import local_ip;print(local_ip())" 2^>nul`) do set "IP=%%I"
 if defined IP set "IP=!IP: =!"
+if not defined IP (
+  for /f "tokens=2 delims=:" %%I in ('ipconfig ^| findstr /i /c:"IPv4"') do (
+    if not defined IP set "IP=%%I"
+  )
+  if defined IP set "IP=!IP: =!"
+)
 
 echo.
 echo   Print Bridge is running in the background.
-if defined IP echo       Web page:  http://!IP!:631
+if defined IP (
+  echo       Web page:  http://!IP!:631
+) else (
+  echo       Web page:  port 631 on this PC - run "Start Print Bridge.bat"
+  echo                  once to see the exact address.
+)
 echo       Log file:  %~dp0printbridge.log
 echo.
 echo   Your phone should list the printer straight from Share ^-^> Print.
