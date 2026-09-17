@@ -52,13 +52,6 @@ driver that is already installed.
 | **Nothing else to install** | PDFium renders, Windows prints. No Acrobat, no SumatraPDF, no vendor software. |
 | **Stays out of the way** | Starts at logon, lives in the tray. Or build it as one `.exe` and double-click it. |
 
-<div align="center">
-<img src="docs/screenshots/card-sheet-light.png" width="49%" alt="Card sheet tab">
-<img src="docs/screenshots/scan-tab.png" width="49%" alt="Scan tab">
-<br>
-<sub>Card sheets with mirrored backs · scanning straight into the card composer</sub>
-</div>
-
 ## Quick start
 
 1. Plug the printer in and make sure **Windows itself** can print to it — install
@@ -72,13 +65,6 @@ driver that is already installed.
 
 Leave the window open, or run **`Install Autostart.bat`** once and it starts at
 every logon with no window at all.
-
-<div align="center">
-<img src="docs/screenshots/print-tab-phone.png" width="32%" alt="The web page on a phone">
-<img src="docs/screenshots/card-sheet-dark.png" width="63%" alt="Card sheet composer in dark mode">
-<br>
-<sub>The same page on a phone and on a laptop — light or dark, your choice</sub>
-</div>
 
 ### Check it works
 
@@ -113,10 +99,6 @@ whatever owns the PrintTo verb. The banner always says which is live.
 Some printers stop drawing jobs down after an interrupted one. Everything
 after that queues up and nothing comes out — which looks like a bug here and
 is not. Print Bridge asks the spooler and tells you:
-
-<div align="center">
-<img src="docs/screenshots/printer-health.png" width="75%" alt="Printer health warning with a clear-the-queue button">
-</div>
 
 **Clear the queue** cancels everything waiting and takes the printer off pause.
 There is a matching item in the tray menu, and `--clear-queue` from a console.
