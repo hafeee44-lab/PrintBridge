@@ -1,7 +1,38 @@
-# Local downloaded/runtime files
-SumatraPDF*.exe
+# Runtime
+spool/
+simulated-jobs/
+printbridge.log
+printbridge.log.old
+*.log
 
-# OS metadata
+# The silent-printing fallback, downloaded on demand. GPLv3 - not ours to ship.
+SumatraPDF*.exe
+setup/
+
+# Build output
+dist/
+build/work/
+build/printbridge.ico
+build/version.txt
+*.spec.bak
+*.manifest
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Superseded layout, kept on disk until it is safe to delete
+_superseded/

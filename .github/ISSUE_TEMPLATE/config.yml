@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How do I set it up?
+    url: https://github.com/hafeee44-lab/PrintBridge/blob/main/docs/manual.md
+    about: The manual covers setup, two-sided printing, card sheets and troubleshooting.

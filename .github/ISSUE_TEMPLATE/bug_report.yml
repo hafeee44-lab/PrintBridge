@@ -1,0 +1,63 @@
+name: Bug report
+description: Something does not work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The startup banner answers most of this in one paste. It says the
+        version, which printing method is live, the printer, and what state
+        the spooler thinks it is in.
+  - type: textarea
+    id: banner
+    attributes:
+      label: The startup banner
+      description: Everything from the PrintBridge logo down to the dashed line.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you got instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: testpage
+    attributes:
+      label: Does `--test-page` work?
+      description: Run `Start Print Bridge.bat --test-page`. It narrows things a lot.
+      options:
+        - It prints and the square measures 100mm
+        - It prints but the size is wrong
+        - Nothing comes out
+        - It reports an error
+        - Have not tried it
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log from `--debug-print`
+      description: Only if a job goes wrong. Paste the lines around the failure.
+      render: text
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 24H2, 64-bit"
+    validations:
+      required: true
+  - type: input
+    id: printer
+    attributes:
+      label: Printer
+      placeholder: "HP LaserJet Professional M1132 MFP"
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: What you printed or scanned from
+      placeholder: "iPhone 13, iOS 18 — Share → Print"

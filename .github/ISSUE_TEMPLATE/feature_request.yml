@@ -1,0 +1,22 @@
+name: Idea
+description: Suggest something
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The task, not the solution. It often has a shorter route.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you had in mind
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Worth knowing
+      options:
+        - label: This should work without installing anything on the phone
+        - label: This needs a printer or scanner feature I have (say which)

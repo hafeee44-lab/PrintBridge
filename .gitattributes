@@ -1,0 +1,16 @@
+# Keep line endings sane across Windows, macOS and Linux checkouts.
+* text=auto eol=lf
+
+# Batch files are run by cmd.exe, which wants CRLF.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Never touched.
+*.png   binary
+*.ico   binary
+*.exe   binary
+
+# Keep the repo's language stats about the app, not the interface markup.
+web/index.html linguist-documentation=false
+docs/**        linguist-documentation
